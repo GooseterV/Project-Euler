@@ -1,5 +1,12 @@
-from funcs import factors, isPrime
+from re import X
+from funcs import smallestPrimeFactor
 
-def compute():
-    return max([i for i in factors(600851475143) if  isPrime(i)])
-print(compute())
+def main():
+	x = 600851475143
+	while True:
+		y = smallestPrimeFactor(x)
+		if y < x:
+			x //= y
+		else:
+			return x
+print(main())

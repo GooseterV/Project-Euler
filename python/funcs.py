@@ -2,7 +2,7 @@ import math
 import decimal
 import random
 import numpy
-
+import itertools
 from functools import reduce
 
 def distance(points:list):
@@ -36,7 +36,7 @@ def factors(n):
 	Returns:
 		factors - a set of the factors of n
 	"""
-	return {f for i in range(1, int(n**0.5)+1) if n % i == 0 for f in [i, n//i]}
+	return set(f for i in range(1, int(n**0.5)+1) if n % i == 0 for f in [i, n//i])
 
 def isPalendromic(n):
 	"""
@@ -62,17 +62,35 @@ def isPandigital(n, until=9):
 		False - the latter
 	"""
 	return set(sorted(set(list(str(n))))) == set(sorted(set([str(i) for i in range(0, until+1)])))
-def listPrimality(n, start=2):
-	"""
-	Lists primes up to `n`, start defaults at 2
 
-	Parameters:
-		n:int - the number to list primes until
-		start:int - optional start for primes, if specified will list primes in `range(start, n)`
-	Returns:
-		Primes - list of primes up to `n`
-	"""
-	return [i for i in range(start, n+1) if isPrime(i)]
+# Credits to Project Nayuki
+# 
+# https://www.nayuki.io/page/project-euler-solutions
+#
+# https://github.com/nayuki/Project-Euler-solutions
+#
+# Functions `listPrimality`, `listPrimes`, and `nthPrime`
+
+# Returns a list of True and False indicating whether each number is prime.
+# For 0 <= i <= n, result[i] is True if i is a prime number, False otherwise.
+def listPrimality(n):
+	# Sieve of Eratosthenes
+	result = [True] * (n + 1)
+	result[0] = result[1] = False
+	for i in range(fsqrt(n) + 1):
+		if result[i]:
+			for j in range(i * i, len(result), i):
+				result[j] = False
+	return result
+
+
+# Returns all the prime numbers less than or equal to n, in ascending order.
+# For example: listPrimes(97) = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, ..., 83, 89, 97].
+def listPrimes(n):
+	return [i for (i, isprime) in enumerate(listPrimality(n)) if isprime]
+
+def nthPrime(n):
+	return next(itertools.islice(filter(isPrime, itertools.count(2)), n-1, None))
 
 
 def nthRoot(num, root) -> float:
@@ -85,6 +103,22 @@ def nthRoot(num, root) -> float:
 		float - the nth root of num
 	"""
 	return num**(1./root)
+
+def fsqrt(n) -> int:
+	"""
+	Get the floored square root of a number (`n`)
+	Parameters:
+		num : Number - the number you want to get floored sqrt of
+	Returns:
+		int - the nth root of num floored 
+	"""
+	return math.floor(nthRoot(n, 2))
+
+def smallestPrimeFactor(n) -> int:
+	for i in range(2, fsqrt(n) + 1):
+		if n % i == 0:
+			return i
+	return n
 
 def to_exponential(n, decimals_num:int=2) -> str:
 	b = decimal.Decimal(str(decimal.Decimal(str(n)).copy_abs()))

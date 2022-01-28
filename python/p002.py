@@ -1,10 +1,15 @@
-from funcs import is_prime
+from funcs import isPrime
 
-def calculate():
-	fseq = [1, 1]
-	count = 0
-	while fseq[len(fseq)-1] <= 4000000:
-		fseq.append(fseq[count]+fseq[count+1])
-		count += 1
-	return sum(i for i in fseq if is_prime(i))
-print(calculate())
+def main():
+	# previous fibonacci number, current fibonacci number
+	x, y = 1, 2
+	total = 0
+	while x <= 4e6:
+		# checking if x is even
+		if x % 2 == 0:
+			total += x
+		z = x + y
+		x = y
+		y = z
+	return total
+print(main())

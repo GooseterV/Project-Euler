@@ -1,9 +1,7 @@
-import math
+from math import gcd, prod
 
-def compute():
+def main():
 	count = 1
 	for i in range(1, 21):
-		count *= math.floor(i / math.gcd(i, count))
+		count *= i // gcd(i, count)
 	return count
-
-print(compute())
