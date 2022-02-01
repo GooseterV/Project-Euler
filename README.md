@@ -22,6 +22,8 @@
 
 **[PHP 8+](https://www.php.net/downloads.php)**
 
+**[Ruby 3.1+](https://www.ruby-lang.org/en/downloads/)**
+
 
 
 
