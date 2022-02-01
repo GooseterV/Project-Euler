@@ -1,3 +1,4 @@
+<?php
 function gcd($a, $b) {
 	while ($b != 0) {
 		$c = $a % $b;
@@ -15,3 +16,4 @@ function main() {
 	return $count;
 }
 echo main();
+?>

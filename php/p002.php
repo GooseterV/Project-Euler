@@ -1,3 +1,4 @@
+<?php
 function compute() {
 	$a = 1;
 	$b = 2;
@@ -13,3 +14,4 @@ function compute() {
 	return $total;
 }
 echo compute();
+?>

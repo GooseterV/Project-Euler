@@ -1,3 +1,4 @@
+<?php
 function isPalendromic($n) {
 	$s = strval($n);
 	$c = strrev($s);
@@ -17,3 +18,4 @@ function compute() {
 	return max($palendromes);
 }
 echo compute();
+?>

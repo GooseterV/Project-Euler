@@ -1,3 +1,4 @@
+<?php
 function smallestFactor($x) {
 	for ($i = 2; $i <= floor(pow($x, 0.5)); $i++) {
 		if ($x % $i == 0) {
@@ -19,3 +20,4 @@ function main() {
 	};
 };
 echo main();
+?>

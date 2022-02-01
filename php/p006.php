@@ -1,3 +1,4 @@
+<?php
 function main() {
 	$total = 0;
 	$total2 = 0;
@@ -9,3 +10,4 @@ function main() {
 }
 
 echo main();
+?>
