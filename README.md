@@ -9,12 +9,8 @@
 
 **[Python 3.6+](https://www.python.org/downloads/)**
 
-**JavaScript ES9+**
-<br>
+**JavaScript ES9+** *or* **[Node JS 16.3+](https://nodejs.org/en/download/)**
 
-*or*
-
-**[Node JS 16.3+](https://nodejs.org/en/download/)**
 
 **[Lua 5.4+](https://www.lua.org/download.html)**
 
