@@ -2,18 +2,18 @@
 **Collection of programs/scripts that solve the [Project Euler](https://projecteuler.net/) problems**
 <br>
 ___
-Language update order
+**Language update order**
 
 
-Python -> Ruby -> JS -> Java -> Lua -> C++ -> PHP
+`Python -> Ruby -> JS -> Java -> Lua -> C++ -> PHP`
 
 ___
-Pending Languages
+**Pending Languages**
 
 
-- C#
-- Go-Lang
-- C-Lang
+- `C#`
+- `Go-Lang`
+- `C-Lang`
 
 
 ## Requirements
