@@ -1,6 +1,19 @@
 # `gooseterv/projecteuler`
 **Collection of programs/scripts that solve the [Project Euler](https://projecteuler.net/) problems**
 <br>
+___
+**Language update order**
+
+
+`Python -> Ruby -> JS -> Java -> Lua -> C++ -> PHP`
+
+___
+**Pending Languages**
+
+
+- `C#`
+- `Go-Lang`
+- `C-Lang`
 
 
 ## Requirements
@@ -19,6 +32,8 @@
 **[PHP 8+](https://www.php.net/downloads.php)**
 
 **[Ruby 3.1+](https://www.ruby-lang.org/en/downloads/)**
+
+
 
 
 
