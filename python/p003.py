@@ -1,4 +1,3 @@
-from re import X
 from funcs import smallestPrimeFactor
 
 def main():
